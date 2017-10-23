@@ -1,0 +1,205 @@
+body {
+    font-family: Arial;
+}
+
+/* Navbar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2D62DC;
+    margin-bottom: 10px;
+}
+li:first-child {
+    float: left;
+}
+li:nth-of-type(1n+2) {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #1B4AB6;
+}
+
+/* Signup & Signin Form Pages */
+#signup-layout {
+    width:27%;
+    height:17vh;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    margin:0 auto;
+}
+
+#signin-layout {
+    width:27%;
+    height:14vh;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    margin:0 auto;
+}
+
+.header {
+    font-weight: bold;
+    background-color: #2D62DC;
+    color: white;
+    padding: 5px;
+}
+
+#form-wrap {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid lightgray;
+}
+
+#sign-form {
+    font-size: 11.5px;
+    font-weight: bold;
+    width: 90%;
+    height: 10vh;
+    margin:0 auto;
+}
+
+.form-field {
+    padding-bottom: 5px;
+}
+
+.submit-form {
+    float: right;
+    margin-right:5px;
+}
+
+input:focus{
+    border: 2px solid #555;
+    outline: none;
+}
+
+/* Index Page */
+
+/* Space on sides - Applies on Index and Users pages */
+#index-wrap {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 12px;
+}
+
+
+#tweet-form {
+    margin-bottom: 20px;
+}
+
+#tweet-area {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+#publish-tweet {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    left: calc(50% + 150);
+}
+::-webkit-input-placeholder {
+    line-height: 70px;
+}
+
+.tweet-block {
+    clear: left;
+}
+
+.avatar-icon {
+    float: left;
+}
+
+.user-says {
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.tweet {
+    margin-left: 8px;
+}
+
+.tweet-block:nth-of-type(2) {
+    margin-left: 55px;
+}
+
+.tweet-block:nth-of-type(3) {
+    margin-left: 110px;
+}
+
+.tweet-block:nth-of-type(4) {
+    margin-left: 165px;
+}
+
+.tweet-block:nth-of-type(5) {
+    margin-left: 220px;
+}
+
+/* Users Page */
+
+#search-user {
+    margin-bottom: 20px;
+}
+
+#left-user-row {
+    width: 575px;
+    display: inline-block;
+}
+
+#right-user-row {
+    display: inline-block;
+    border: solid 3px lightgray;
+    border-radius: 5px;
+    padding: 20px;
+    float:right;
+}
+
+.user-block {
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    width: 100px;
+    height: 120px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.user-content {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#follow {
+    margin-bottom: 4px;
+}
+
+#followers-header {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.follow-block {
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    width: 100px;
+    height: 120px;
+    position: relative;
+    text-align: center;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
