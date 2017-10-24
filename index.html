@@ -3,53 +3,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>OfekTwitter - Index</title>
 </head>
 <body>
 
-<ul>
-    <li><a href="index.html"><img src="img/ofek.png" alt="logo" width="14px" height="14px" /> OfekTwitter</a></li>
-    <li><a href="signin.html">Sign in</a></li>
-    <li><a href="signup.html">Sign up</a></li>
-    <li><a href="users.html">Users</a></li>
-</ul>
-<div id="index-wrap">
-    <form id="tweet-form">
-        <textarea id="tweet-area" rows="5" cols="100" placeholder="Tweet text..."></textarea>
-        <button id="publish-tweet" type="submit">Publish</button>
-    </form>
-
-    <div class="tweet-block">
-        <div class="avatar-icon"><img src="img/useravatar.png" width="48px" height="48px" alt="avatar" /></div>
-        <span class="user-says">James Bond says:</span> <br />
-        <span class="tweet">Blabla bla...</span>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img src="img/ofek.png" alt="logo"/> OfekTwitter</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li><a href="users.html">Users</a></li>
+                <li><a href="signin.html">Sign in</a></li>
+                <li><a href="signup.html">Sign up</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
     </div>
+</nav>
 
-    <div class="tweet-block">
-        <div class="avatar-icon"><img src="img/useravatar.png" width="48px" height="48px" alt="avatar" /></div>
-        <span class="user-says">James Bond says:</span> <br />
-        <span class="tweet">Bond, James bond</span>
+<div class="container content">
+    <div class="row">
+        <div class="col-xs-12">
+            <textarea class="form-control" rows="3" placeholder="tweet here..."></textarea>
+        </div>
+        <div class="col-xs-12">
+            <button type="button" class="btn btn-primary pull-right">publish</button>
+        </div>
     </div>
-
-    <div class="tweet-block">
-        <div class="avatar-icon"><img src="img/useravatar.png" width="48px" height="48px" alt="avatar" /></div>
-        <span class="user-says">Albert Einstein says:</span> <br />
-        <span class="tweet">E=mc^2</span>
-    </div>
-
-    <div class="tweet-block">
-        <div class="avatar-icon"><img src="img/useravatar.png" width="48px" height="48px" alt="avatar" /></div>
-        <span class="user-says">Bill Gates says:</span> <br />
-        <span class="tweet">I think 64 bytes should be enough for everyone</span>
-    </div>
-
-    <div class="tweet-block">
-        <div class="avatar-icon"><img src="img/useravatar.png" width="48px" height="48px" alt="avatar" /></div>
-        <span class="user-says">Frodo says:</span> <br />
-        <span class="tweet">My Precious</span>
-    </div>
-
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 tweet">
+            <img src="img/useravatar.png" class="pull-left avatar-icon">
+            <span><b>James Bond says:</b></span> <br />
+            <span>Blabla bla...</span>
+        </div>
+
+        <div class="col-xs-12 tweet">
+            <img src="img/useravatar.png" class="pull-left avatar-icon">
+            <span><b>Albert Einstein says:</b></span> <br />
+            <span>Bond, James bond</span>
+        </div>
+
+        <div class="col-xs-12 tweet">
+            <img src="img/useravatar.png" class="pull-left avatar-icon">
+            <span><b>Bill Gates says:</b></span> <br />
+            <span>E=mc^2</span>
+        </div>
+
+        <div class="col-xs-12 tweet">
+            <img src="img/useravatar.png" class="pull-left avatar-icon">
+            <span><b>James Bond says:</b></span> <br />
+            <span>I think 64 bytes should be enough for everyone</span>
+        </div>
+
+        <div class="col-xs-12 tweet">
+            <img src="img/useravatar.png" class="pull-left avatar-icon">
+            <span><b>Frodo says:</b></span> <br />
+            <span>My Precious</span>
+        </div>
+
+    </div>
+</div>
+
 </body>
 </html>
