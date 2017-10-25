@@ -6,11 +6,11 @@ body {
 /* Bootstrap - Navbar */
 .navbar-inverse {
     background-color: #2D62DC;
-    color:#ffffff;
+    color: #ffffff;
 }
 
 .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand  {
-    color:#fff;
+    color: #fff;
 }
 
 .navbar-brand > img {

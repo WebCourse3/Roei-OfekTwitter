@@ -35,48 +35,21 @@
 <div class="container content">
     <div class="row">
         <div class="col-xs-12">
-            <textarea class="form-control" rows="3" placeholder="tweet here..."></textarea>
+            <textarea id="tweet-content" class="form-control" rows="3" placeholder="tweet here..."></textarea>
         </div>
         <div class="col-xs-12">
-            <button type="button" class="btn btn-primary pull-right">publish</button>
+            <button type="submit" class="btn btn-primary pull-right" onclick="getTweet()">publish</button>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12 tweet">
-            <img src="img/useravatar.png" class="pull-left avatar-icon">
-            <span><b>James Bond says:</b></span> <br />
-            <span>Blabla bla...</span>
-        </div>
-
-        <div class="col-xs-12 tweet">
-            <img src="img/useravatar.png" class="pull-left avatar-icon">
-            <span><b>Albert Einstein says:</b></span> <br />
-            <span>Bond, James bond</span>
-        </div>
-
-        <div class="col-xs-12 tweet">
-            <img src="img/useravatar.png" class="pull-left avatar-icon">
-            <span><b>Bill Gates says:</b></span> <br />
-            <span>E=mc^2</span>
-        </div>
-
-        <div class="col-xs-12 tweet">
-            <img src="img/useravatar.png" class="pull-left avatar-icon">
-            <span><b>James Bond says:</b></span> <br />
-            <span>I think 64 bytes should be enough for everyone</span>
-        </div>
-
-        <div class="col-xs-12 tweet">
-            <img src="img/useravatar.png" class="pull-left avatar-icon">
-            <span><b>Frodo says:</b></span> <br />
-            <span>My Precious</span>
-        </div>
-
+    <div id="tweets-block" class="row">
+        <!-- Display all tweets by JS -->
     </div>
 </div>
+
+<script type="text/javascript" src="js/tweet.js"></script>
 
 </body>
 </html>
