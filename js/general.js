@@ -1,4 +1,4 @@
-/* Image creation */
+/* Image creation. */
 function createImg(className, src) {
     var img = document.createElement("img");
     img.setAttribute("src", src);

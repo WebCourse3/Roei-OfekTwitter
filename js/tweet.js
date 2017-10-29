@@ -6,6 +6,7 @@ var alltweets = [
     {"name":"Frodo", "tweetContent":"My Precious"}
 ];
 
+/* Display all tweets */
 function ready() {
     alltweets.forEach(displayTweet);
 }
@@ -18,6 +19,7 @@ function getTweet() {
     alltweets.push(newtweet);
 }
 
+/* Display tweet block */
 function displayTweet(newtweet) {
     var tweetBlock = createDiv("col-xs-12 tweet");
     var newDiv = document.getElementById("tweets-block").appendChild(tweetBlock);

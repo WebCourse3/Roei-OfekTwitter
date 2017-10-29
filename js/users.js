@@ -11,11 +11,13 @@ var users = [
     {"name":"Henry the 8th", "status":"unfollow"}
 ];
 
+/* Display all users */
 function ready() {
     users.forEach(displayUser);
 }
 window.onload = ready;
 
+/* Display user block */
 function displayUser(newUser) {
     var leftBlock = document.getElementById("leftBlock");
     var usersBlock = createDiv("col-md-2 col-xs-6");
@@ -40,6 +42,7 @@ function displayUser(newUser) {
     }
 }
 
+/* Create user block on Followees list */
 function followeesCreate(newUser) {
     var followeesBlock = document.getElementById("followees-block");
     var userBlock = createDiv("panel panel-default " + newUser.name.toString().replace(/\s/g,''));
@@ -57,11 +60,30 @@ function followeesCreate(newUser) {
     followeesBlock.appendChild(userBlock);
 }
 
-/* Paragraph creation */
-function createParagraph() {
-    var p = document.createElement("p");
+/* Toggle between "Follow"/ "Unfollow" */
+function checkStatus() {
+    var btn = this;
+    if (btn.innerHTML === "follow") {
+        btn.className = "btn btn-danger";
+        btn.innerHTML = "unfollow";
+        var newFellow = {"name":this.name, "status":"unfollow"};
+        followeesCreate(newFellow);
+    } else {
+        btn.className = "btn btn-primary";
+        btn.innerHTML = "follow";
+        var newFellow = {"name":this.name, "status":"follow"};
+        DeleteFollow(newFellow);
+    }
+}
 
-    return p;
+/* Remove user block from Followees List when "Unfollow" button clicked */
+function DeleteFollow(newFellow) {
+    var followees = document.getElementById("followees-block");
+    var x = document.getElementsByClassName(newFellow.name.toString().replace(/\s/g,''));
+    followees.removeChild(x[0]);
+    var buttonFromAll = document.getElementById(newFellow.name.toString().replace(/\s/g,''));
+    buttonFromAll.innerHTML = "follow";
+    buttonFromAll.setAttribute("class","btn btn-primary");
 }
 
 /* Button creation */
@@ -79,43 +101,29 @@ function createButton(newUser) {
     return btn;
 }
 
-function checkStatus() {
-    var btn = this;
-    if (btn.innerHTML === "follow") {
-        btn.className = "btn btn-danger";
-        btn.innerHTML = "unfollow";
-        var newFellow = {"name":this.name, "status":"unfollow"};
-        followeesCreate(newFellow);
-    } else {
-        btn.className = "btn btn-primary";
-        btn.innerHTML = "follow";
-        var newFellow = {"name":this.name, "status":"follow"};
-        DeleteFollow(newFellow);
-    }
+/* Paragraph creation */
+function createParagraph() {
+    var p = document.createElement("p");
+
+    return p;
 }
 
-function DeleteFollow(newFellow) {
-    var followees = document.getElementById("followees-block");
-    var x = document.getElementsByClassName(newFellow.name.toString().replace(/\s/g,''));
-    followees.removeChild(x[0]);
-    var buttonFromAll = document.getElementById(newFellow.name.toString().replace(/\s/g,''));
-    buttonFromAll.innerHTML = "follow";
-    buttonFromAll.setAttribute("class","btn btn-primary");
-}
-
-function filter() {
+/* Filter users via search field */
+function filterUsers() {
     var input = document.getElementById("searchUserName");
     var filter = input.value.toUpperCase();
     var usersList = document.getElementById("leftBlock");
+    var userBlock = usersList.getElementsByClassName("panel-body text-center");
     var length = usersList.childElementCount;
     for (i=0; i<length; i++) {
-        usersList.childNodes = userList[0].getElementsByTagName(usersList.childNodes)[0];
-        if (usersList.childNodes) {
-            if (usersList.childNodes.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                userList[i].style.display = "";
-            } else {
-                userList[i].style.display = "none";
-            }
+
+        var userBlockname = userBlock[i].getElementsByTagName("button")[0].name;
+        if (userBlockname.toUpperCase().indexOf(filter) > -1) {
+            userBlock[i].parentNode.parentNode.style.display = "";
+        } else {
+            userBlock[i].parentNode.parentNode.style.display = "none";
         }
     }
 }
+
+
