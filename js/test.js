@@ -1,14 +1,12 @@
-var results;
-
 function test_group(group_name, asserts) {
-    results = document.createElement("div");
-    results.setAttribute("class","col-xs-12");
+    this.results = document.createElement("div");
+    this.results.setAttribute("class","col-xs-12");
     document.getElementById("test-row").appendChild(results);
     var h = document.createElement('H4');
     var titleName = document.createTextNode(group_name);
     h.appendChild(titleName);
     results.appendChild(h);
-    asserts();
+    asserts.bind(this)();
 
 }
 
@@ -17,18 +15,18 @@ function assert(testPassed, testName) {
     label.innerHTML = testName;
     label.style.color = 'black';
     label.style.border = 'solid black 1px';
-    results.setAttribute("class", "alert alert-success");
+    this.results.setAttribute("class", "alert alert-success");
 
     if (testPassed) {
         label.setAttribute("class", "alert alert-success");
     } else {
-        results.setAttribute("class", "alert alert-danger");
+        this.results.setAttribute("class", "alert alert-danger");
         label.setAttribute("class", "alert alert-danger");
     }
     var space = document.createElement('br');
 
-    results.appendChild(label);
-    results.appendChild(space);
+    this.results.appendChild(label);
+    this.results.appendChild(space);
 }
 
 test_group('First test group', function () {

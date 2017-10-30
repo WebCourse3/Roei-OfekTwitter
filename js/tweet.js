@@ -42,3 +42,4 @@ function createParagraph(className) {
 
     return p;
 }
+
